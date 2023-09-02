@@ -8,9 +8,9 @@ namespace OnlineSchool
 {
     internal class Student
     {
-        private string Name { get; }
-        private string Sername { get; }
-        private int Age { get; }
+        public string Name { get; }
+        public string Sername { get; }
+        public int Age { get; }
 
 
         public Student(string name,string sername,int age)
