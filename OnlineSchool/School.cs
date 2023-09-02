@@ -43,6 +43,13 @@ namespace OnlineSchool
             Student student = new Student(name,sername,age);
             Students.Add(student);
         }
+        public void DeleteStudentFromSchool()
+        {
+            Console.WriteLine("Выберите под каким номером отчислить студента: ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Студент {Students[num-1].Name} отчислен");
+            Students.RemoveAt(num-1);
+        }
 
     }
 }
