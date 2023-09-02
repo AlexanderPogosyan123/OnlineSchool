@@ -50,6 +50,10 @@ namespace OnlineSchool
             Console.WriteLine($"Студент {Students[num-1].Name} отчислен");
             Students.RemoveAt(num-1);
         }
+        public void Exit()
+        {
+            System.Environment.Exit(0);
+        }
 
     }
 }
