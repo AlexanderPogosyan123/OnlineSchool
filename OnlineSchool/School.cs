@@ -23,10 +23,11 @@ namespace OnlineSchool
             }
             else
             {
-                Console.WriteLine($"{"Имя",-10} {"Фамилия",-10}{"Возраст",-10}");
-                foreach (var student in Students)
+                Console.WriteLine($"{"Индекс",-8}{"Имя",-12} {"Фамилия",-12}{"Возраст",-10}");
+                for (int i = 0; i < Students.Count; i++)
                 {
-                    Console.WriteLine("{0,-10}{1,-10}{2,-10}", student.Name, student.Sername, student.Age);
+                    Console.WriteLine(new String('-', 40));
+                    Console.WriteLine($"{(i+1)+"",-8}{Students[i].Name,-12}{Students[i].Sername,-12}{Students[i].Age,-10}");
                 }
 
             }
