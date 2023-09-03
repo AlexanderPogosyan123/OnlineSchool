@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineSchool
 {
-    internal class School
+    public class School
     {
         private string Name { get; }
         private List<Student> Students = new List<Student>();
@@ -36,10 +36,26 @@ namespace OnlineSchool
         {
             Console.WriteLine("Введите имя ученика: ");
             string name = Console.ReadLine();
+            Program.CheckFormatInput(ref name);
             Console.WriteLine("Введите фамилию ученика: ");
             string sername = Console.ReadLine();
-            Console.WriteLine("Введите возраст ученика");
-            int age = Convert.ToInt32(Console.ReadLine());
+            Program.CheckFormatInput(ref sername);
+            Console.WriteLine("Введите возраст ученика: ");
+            int age;
+            while (true)
+            {
+
+                try
+                {
+                    age = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Ошибка,введите число: ");
+                    Console.WriteLine();
+                }
+            }
             Student student = new Student(name,sername,age);
             Students.Add(student);
         }
