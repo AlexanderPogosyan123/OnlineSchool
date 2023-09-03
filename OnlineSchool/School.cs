@@ -89,10 +89,6 @@ namespace OnlineSchool
             Console.WriteLine($"Студент {Students[index-1].Name} отчислен");
             Students.RemoveAt(index-1);
         }
-        public void Exit()
-        {
-            System.Environment.Exit(0);
-        }
 
     }
 }
