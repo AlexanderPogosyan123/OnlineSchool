@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -62,9 +63,31 @@ namespace OnlineSchool
         public void DeleteStudentFromSchool()
         {
             Console.WriteLine("Выберите под каким номером отчислить студента: ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Студент {Students[num-1].Name} отчислен");
-            Students.RemoveAt(num-1);
+            int index = 0;
+            while (true)
+            {
+
+                try
+                {
+                    index = Convert.ToInt32(Console.ReadLine());
+                    if (index > Students.Count || index < 1)
+                    {
+                        Console.WriteLine("Неверный формат ввода ,введите номер из списка:");
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine("Неверный формат ввода ,введите номер из списка:");
+                }
+               
+            }
+            Console.WriteLine($"Студент {Students[index-1].Name} отчислен");
+            Students.RemoveAt(index-1);
         }
         public void Exit()
         {
