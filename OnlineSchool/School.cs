@@ -93,7 +93,7 @@ namespace OnlineSchool
             Console.WriteLine("2. Посмотреть список всех учеников");
             Console.WriteLine("3. Отчислить ученика");
             Console.WriteLine("4. Выйти из школы");
-
+            Console.WriteLine("5. Показать список команд администрирования");
             Console.WriteLine();
         }
         public void CheckAndCorrectFormatIndexOfList(ref int num)
