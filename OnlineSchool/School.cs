@@ -65,7 +65,6 @@ namespace OnlineSchool
             Console.WriteLine($"Ученик {name} добавлен ");
             Student student = new Student(name,sername,age);
             Students.Add(student);
-            PrintAllStudents();
             Console.WriteLine();
             ShowListOptions();
         }

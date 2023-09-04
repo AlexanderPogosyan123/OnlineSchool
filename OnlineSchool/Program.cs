@@ -14,6 +14,7 @@
 
             school.ShowListOptions();
 
+            int c = 0;
 
             while (true)
             {
@@ -22,7 +23,6 @@
                 int num = Convert.ToInt32(Console.ReadLine());
 
                 school.CheckAndCorrectFormatIndexOfList(ref num);
-                int c = 0;
                 switch (num)
                 {
                     case 1:
