@@ -61,10 +61,10 @@ namespace OnlineSchool
             }
             Console.WriteLine();
             Console.WriteLine($"Ученик {name} добавлен ");
-            PrintAllStudents();
             Student student = new Student(name,sername,age);
             Students.Add(student);
-
+            PrintAllStudents();
+            Console.WriteLine();
             ShowListOptions();
         }
         public void DeleteStudentFromSchool()
