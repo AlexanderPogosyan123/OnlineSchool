@@ -104,7 +104,7 @@ namespace OnlineSchool
                 try
                 {
                     c++;
-                    if (с != 1)
+                    if (c != 1)
                     {
                         num = Convert.ToInt32(Console.ReadLine());
                     }
