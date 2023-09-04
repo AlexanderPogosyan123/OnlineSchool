@@ -45,9 +45,6 @@
                     case 4:
                         school.Exit();
                         break;
-                    case 5:
-                        school.ShowListOptions();
-                        break;
                     default:
                         break;
                 }

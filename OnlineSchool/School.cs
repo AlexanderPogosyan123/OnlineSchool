@@ -59,8 +59,13 @@ namespace OnlineSchool
                 }
 
             }
+            Console.WriteLine();
+            Console.WriteLine($"Ученик {name} добавлен ");
+            PrintAllStudents();
             Student student = new Student(name,sername,age);
             Students.Add(student);
+
+            ShowListOptions();
         }
         public void DeleteStudentFromSchool()
         {
@@ -86,6 +91,10 @@ namespace OnlineSchool
             }
             Console.WriteLine($"Студент {Students[num-1].Name} отчислен");
             Students.RemoveAt(num-1);
+            PrintAllStudents();
+            Console.WriteLine();
+            ShowListOptions();
+
         }
         public void ShowListOptions()
         {
@@ -93,7 +102,6 @@ namespace OnlineSchool
             Console.WriteLine("2. Посмотреть список всех учеников");
             Console.WriteLine("3. Отчислить ученика");
             Console.WriteLine("4. Выйти из школы");
-            Console.WriteLine("5. Показать список команд администрирования");
             Console.WriteLine();
         }
         public void CheckAndCorrectFormatIndexOfList(ref int num)
