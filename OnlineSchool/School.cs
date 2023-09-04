@@ -123,6 +123,7 @@ namespace OnlineSchool
         }
         public void Exit()
         {
+            Console.WriteLine("Вы вышли из школы.");
             System.Environment.Exit(0);
         }
 
