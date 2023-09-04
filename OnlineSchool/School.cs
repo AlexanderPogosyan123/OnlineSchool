@@ -108,7 +108,7 @@ namespace OnlineSchool
                     {
                         num = Convert.ToInt32(Console.ReadLine());
                     }
-                    if (num < 1 || num > 4)
+                    if (num < 1 || num > 5)
                     {
                         throw new Exception(" Вы выбрали номер не из списка");
                     }
