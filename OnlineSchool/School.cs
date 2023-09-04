@@ -30,6 +30,8 @@ namespace OnlineSchool
                     Console.WriteLine(new String('-', 40));
                     Console.WriteLine($"{(i+1)+"",-8}{Students[i].Name,-12}{Students[i].Sername,-12}{Students[i].Age,-10}");
                 }
+                Console.WriteLine();
+                ShowListOptions();
 
             }
         }
