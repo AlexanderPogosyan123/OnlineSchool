@@ -8,7 +8,7 @@ namespace OnlineSchool
 {
     internal class School
     {
-        private string Name { get; }
+        public string Name { get; }
         private List<Student> Students = new List<Student>();
 
         public School(string name)
@@ -65,6 +65,7 @@ namespace OnlineSchool
         public void DeleteStudentFromSchool()
         {
             Console.WriteLine();
+            
             Console.WriteLine("Выберите под каким номером отчислить студента: ");
             int num = Convert.ToInt32(Console.ReadLine());
             while (true)
@@ -85,6 +86,40 @@ namespace OnlineSchool
             }
             Console.WriteLine($"Студент {Students[num-1].Name} отчислен");
             Students.RemoveAt(num-1);
+        }
+        public void ShowListOptions()
+        {
+            Console.WriteLine("1. Добавить нового ученика");
+            Console.WriteLine("2. Посмотреть список всех учеников");
+            Console.WriteLine("3. Отчислить ученика");
+            Console.WriteLine("4. Выйти из школы");
+
+            Console.WriteLine();
+        }
+        public void CheckAndCorrectFormatIndexOfList(ref int num)
+        {
+            int c = 0;
+            while (true)
+            {
+                try
+                {
+                    c++;
+                    if (num != 1)
+                    {
+                        num = Convert.ToInt32(Console.ReadLine());
+                    }
+                    if (num < 1 || num > 4)
+                    {
+                        throw new Exception(" Вы выбрали номер не из списка");
+                    }
+                    break;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ошибка! " + e.Message);
+                    Console.WriteLine("Повторите попытку: ");
+                }
+            }
         }
         public void Exit()
         {
