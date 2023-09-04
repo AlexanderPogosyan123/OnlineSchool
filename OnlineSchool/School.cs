@@ -36,9 +36,11 @@ namespace OnlineSchool
         {
             Console.WriteLine("Введите имя ученика: ");
             string name = Console.ReadLine();
+            CheckAndCorrectFormat(ref name);
             Console.WriteLine("Введите фамилию ученика: ");
             string sername = Console.ReadLine();
-            Console.WriteLine("Введите возраст ученика");
+            CheckAndCorrectFormat(ref sername);
+            Console.WriteLine("Введите возраст ученика: ");
             int age = Convert.ToInt32(Console.ReadLine());
             Student student = new Student(name,sername,age);
             Students.Add(student);
@@ -55,5 +57,40 @@ namespace OnlineSchool
             System.Environment.Exit(0);
         }
 
+        private void CheckAndCorrectFormat(ref string str)
+        {
+            int c = 0;
+            while (true)
+            {
+                
+                try
+                {
+                    c++;
+                    if (c != 1)
+                    {
+                        str = Console.ReadLine();
+                    }
+                    if (str.Length < 2)
+                    {
+                        throw new Exception("Длина строки должна быть больше 1 символа");
+                    }
+                    
+                    for (int i = 0; i < str.Length; i++)
+                    {
+                        if (char.IsDigit(str[i]))
+                        {
+                            throw new Exception("В строке не должно быть цифр");
+                        }
+                    }
+                    break;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ошибка! " + e.Message);
+                    Console.WriteLine("Повторите попытку: ");
+
+                }
+            }
+        }
     }
 }
