@@ -41,7 +41,22 @@ namespace OnlineSchool
             string sername = Console.ReadLine();
             CheckAndCorrectFormat(ref sername);
             Console.WriteLine("Введите возраст ученика: ");
-            int age = Convert.ToInt32(Console.ReadLine());
+            int age = 0;
+
+            while (true)
+            {
+                try
+                {
+                    age = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Ошибка! В возрасте не может быть букв");
+                    Console.WriteLine("Введите еще раз: ");
+                }
+
+            }
             Student student = new Student(name,sername,age);
             Students.Add(student);
         }
