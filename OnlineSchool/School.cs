@@ -17,6 +17,7 @@ namespace OnlineSchool
         }
         public void PrintAllStudents()
         {
+            Console.WriteLine();
             if (Students.Count == 0)
             {
                 Console.WriteLine($"В школе {Name} нету учеников");
@@ -34,6 +35,7 @@ namespace OnlineSchool
         }
         public void AddNewStudent()
         {
+            Console.WriteLine();
             Console.WriteLine("Введите имя ученика: ");
             string name = Console.ReadLine();
             CheckAndCorrectFormat(ref name);
@@ -62,8 +64,25 @@ namespace OnlineSchool
         }
         public void DeleteStudentFromSchool()
         {
+            Console.WriteLine();
             Console.WriteLine("Выберите под каким номером отчислить студента: ");
             int num = Convert.ToInt32(Console.ReadLine());
+            while (true)
+            {
+                try
+                {
+                    if (num < 1 || num > Students.Count)
+                    {
+                        throw new Exception(" Вы выбрали номер не из списка");
+                    }
+                    break;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ошибка! " + e.Message);
+                    Console.WriteLine("Повторите попытку: ");
+                }
+            }
             Console.WriteLine($"Студент {Students[num-1].Name} отчислен");
             Students.RemoveAt(num-1);
         }
@@ -72,6 +91,7 @@ namespace OnlineSchool
             System.Environment.Exit(0);
         }
 
+       
         private void CheckAndCorrectFormat(ref string str)
         {
             int c = 0;
